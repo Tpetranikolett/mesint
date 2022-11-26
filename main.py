@@ -1,4 +1,9 @@
 import random
+from addons import *
+from genetic import *
+from objectives import *
+from problem_setup import *
+from tsp import *
 
 def main():
   random.seed(100)
