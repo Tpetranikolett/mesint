@@ -1,5 +1,8 @@
 import random
 import copy
+from addons import *
+from objectives import *
+
 
 def mutate(s_of_routes, num_of_salesmen):
   mutant = copy.deepcopy(s_of_routes)
@@ -69,6 +72,7 @@ def crossover_different(parent_better, parent_worse, dict):
 
 def genetic_alg(dict, s, population_size, generations, mutations, crossovers, num_of_salesmen):
   population = [list(s)]
+  counter = 0
   for _ in range(population_size - 1):
     population.append(mutate(s, num_of_salesmen))
   best_solution = max(population, key = lambda ch: total_length(dict, ch))
