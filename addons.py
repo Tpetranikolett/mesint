@@ -21,3 +21,6 @@ def print_map(tsp, to_p):
           print("o")
         if (i,j) not in tsp:
           print(" ")
+
+def divider():
+  print("\n-------------------------\n")

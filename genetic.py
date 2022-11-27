@@ -70,7 +70,7 @@ def crossover_different(parent_better, parent_worse, dict):
         baby[sw[0]][sw[1]], baby[best][k] = baby[best][k], baby[sw[0]][sw[1]]
   return baby
 
-def genetic_alg(dict, s, population_size, generations, mutations, crossovers, num_of_salesmen):
+def genetic_alg(dict, s, population_size, generations, mutations, crossovers, num_of_salesmen, stopping_condition):
   population = [list(s)]
   counter = 0
   for _ in range(population_size - 1):
@@ -99,7 +99,7 @@ def genetic_alg(dict, s, population_size, generations, mutations, crossovers, nu
       counter = 0
     else:
       counter += 1
-    if counter == 15:
+    if counter == stopping_condition:
       print('generations: ', i)
       break
   return best_solution
